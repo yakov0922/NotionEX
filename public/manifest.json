@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "NotionEX",
+    "version": "1.0.0",
+    "default_locale": "zh_CN",
+    "description": "__MSG_appDesc__",
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "16": "src/icons/16.png",
+            "48": "src/icons/48.png",
+            "128": "src/icons/128.png"
+        }
+    },
+    "icons": {
+        "16": "src/icons/16.png",
+        "48": "src/icons/48.png",
+        "128": "src/icons/128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "src/background/index.ts",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "src/content/index.ts"
+            ]
+        }
+    ],
+    "options_ui": {
+        "page": "src/options/index.html",
+        "open_in_tab": true
+    }
+}

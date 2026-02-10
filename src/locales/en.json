@@ -1,0 +1,56 @@
+{
+    "init": {
+        "defaultWorkspace": "Default Workspace"
+    },
+    "error": {
+        "initFailed": "Initialization failed, please try again",
+        "tokenInvalid": "Token invalid or expired",
+        "fetchFailed": "Failed to fetch databases",
+        "fetchFailedPermission": "Failed to fetch databases, please check Token permissions",
+        "tokenEmpty": "Token cannot be empty",
+        "tokenCheck": "Token invalid, please check",
+        "addFailed": "Failed to add",
+        "getPageFailed": "Failed to get current page",
+        "extractFailed": "Failed to extract page content",
+        "saveFailed": "Save failed",
+        "saveRetry": "Save failed, please try again",
+        "connectFailed": "Connection failed, please reload the page"
+    },
+    "confirm": {
+        "deleteWorkspace": "Are you sure you want to delete this workspace?"
+    },
+    "success": {
+        "title": "Save Success",
+        "subtitle": "Content has been safely synced to your Notion database",
+        "openPage": "Open Notion Page",
+        "back": "Back to Main"
+    },
+    "settings": {
+        "title": "Workspace Management",
+        "addedList": "Added Workspaces (Drag to sort)",
+        "workspaceNamePlaceholder": "Workspace Name",
+        "cancel": "Cancel",
+        "save": "Save",
+        "edit": "Edit",
+        "delete": "Delete",
+        "noWorkspaces": "No workspaces, please add below",
+        "addNew": "Add New Workspace",
+        "newNamePlaceholder": "Workspace Name (Optional, e.g. Personal Notes)",
+        "getToken": "Get Token",
+        "add": "Add"
+    },
+    "main": {
+        "subtitle": "Efficient Sync Tool",
+        "settingsTooltip": "Settings Workspace",
+        "pageTitle": "Page Title",
+        "titlePlaceholder": "Enter page title...",
+        "workspace": "Workspace",
+        "configureFirst": "Please configure workspace first",
+        "saveLocation": "Save Location",
+        "saveButton": "Save to Notion",
+        "saving": "Saving..."
+    },
+    "notion": {
+        "originalLink": "Original Link"
+    }
+}

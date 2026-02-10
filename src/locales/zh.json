@@ -1,0 +1,56 @@
+{
+    "init": {
+        "defaultWorkspace": "默认工作空间"
+    },
+    "error": {
+        "initFailed": "初始化失败，请重试",
+        "tokenInvalid": "Token 无效或已过期",
+        "fetchFailed": "获取数据库失败",
+        "fetchFailedPermission": "获取数据库失败，请检查 Token 权限",
+        "tokenEmpty": "Token 不能为空",
+        "tokenCheck": "Token 无效，请检查",
+        "addFailed": "添加失败",
+        "getPageFailed": "无法获取当前页面",
+        "extractFailed": "无法提取页面内容",
+        "saveFailed": "保存失败",
+        "saveRetry": "保存失败，请重试",
+        "connectFailed": "连接失败，请刷新页面后重试"
+    },
+    "confirm": {
+        "deleteWorkspace": "确定要删除这个工作空间吗？"
+    },
+    "success": {
+        "title": "保存成功",
+        "subtitle": "内容已安全同步到您的 Notion 数据库",
+        "openPage": "打开 Notion 页面",
+        "back": "返回主界面"
+    },
+    "settings": {
+        "title": "工作空间管理",
+        "addedList": "已添加的空间 (拖拽排序)",
+        "workspaceNamePlaceholder": "空间名称",
+        "cancel": "取消",
+        "save": "保存",
+        "edit": "编辑",
+        "delete": "删除",
+        "noWorkspaces": "暂无工作空间，请在下方添加",
+        "addNew": "添加新空间",
+        "newNamePlaceholder": "空间名称 (可选，如：个人笔记)",
+        "getToken": "获取 Token",
+        "add": "添加"
+    },
+    "main": {
+        "subtitle": "高效同步工具",
+        "settingsTooltip": "设置工作空间",
+        "pageTitle": "页面标题",
+        "titlePlaceholder": "输入页面标题...",
+        "workspace": "工作空间",
+        "configureFirst": "请先配置工作空间",
+        "saveLocation": "保存位置",
+        "saveButton": "保存到 Notion",
+        "saving": "保存中..."
+    },
+    "notion": {
+        "originalLink": "原文链接"
+    }
+}

@@ -1,0 +1,271 @@
+:root {
+    --macos-bg: rgba(255, 255, 255, 0.6);
+    --macos-bg-dark: rgba(20, 20, 20, 0.7);
+    --macos-border: rgba(0, 0, 0, 0.1);
+    --macos-border-dark: rgba(255, 255, 255, 0.1);
+    --macos-blue: #007AFF;
+    --macos-blue-glow: rgba(0, 122, 255, 0.2);
+    --macos-text: #1d1d1f;
+    --macos-text-dark: #f5f5f7;
+    --macos-secondary: rgba(0, 0, 0, 0.5);
+    --macos-secondary-dark: rgba(255, 255, 255, 0.5);
+    --glass-blur: blur(20px) saturate(180%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --macos-bg: var(--macos-bg-dark);
+        --macos-border: var(--macos-border-dark);
+        --macos-text: var(--macos-text-dark);
+        --macos-secondary: var(--macos-secondary-dark);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+    width: 380px;
+    height: 540px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #fbfbfd;
+    /* 极简苹果白保底 */
+}
+
+@media (prefers-color-scheme: dark) {
+
+    html,
+    body {
+        background: #000;
+    }
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* 极简氛围背景：移除花哨光斑，改为淡雅微光 */
+/* 重要修复：此处作为父容器，必须 display: flex 才能让子元素居中 */
+.ambient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle at 0% 0%, rgba(0, 122, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(200, 80, 192, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    /* 防止背景拦截点击，但也会影响子元素 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 玻璃态窗口 */
+/* 重要修复：必须 pointer-events: auto 才能恢复点击 */
+.glass-window {
+    width: 350px;
+    height: 480px;
+    background: var(--macos-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--macos-border);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    pointer-events: auto;
+    /* 关键：子元素重新开启点击 */
+}
+
+.macos-header {
+    height: 56px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--macos-border);
+    flex-shrink: 0;
+}
+
+.macos-content {
+    flex: 1;
+    padding: 24px 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.macos-content::-webkit-scrollbar {
+    display: none;
+}
+
+.macos-property {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.macos-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--macos-secondary);
+    letter-spacing: 0.02em;
+}
+
+.macos-input,
+.macos-select {
+    width: 100%;
+    padding: 11px 13px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--macos-border);
+    border-radius: 12px;
+    color: var(--macos-text);
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .macos-input,
+    .macos-select {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.macos-input:focus,
+.macos-select:focus {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: var(--macos-blue);
+    box-shadow: 0 0 0 4px var(--macos-blue-glow);
+}
+
+.macos-footer {
+    padding: 12px 20px 24px;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.macos-btn-primary {
+    width: 100%;
+    height: 48px;
+    background: var(--macos-blue);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s;
+    box-shadow: 0 8px 16px var(--macos-blue-glow);
+}
+
+.macos-btn-primary:active {
+    transform: scale(0.97);
+}
+
+.spatial-success {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 24px;
+}
+
+.success-icon-wrapper {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.success-icon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: var(--macos-blue);
+    filter: blur(40px);
+    opacity: 0.25;
+    z-index: -1;
+}
+
+.success-title {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.success-subtitle {
+    font-size: 13px;
+    color: var(--macos-secondary);
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.spatial-link-btn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--macos-border);
+    padding: 14px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--macos-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin-bottom: 12px;
+}
+
+.spatial-link-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.spatial-close-btn {
+    font-size: 13px;
+    color: var(--macos-secondary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
