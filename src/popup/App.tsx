@@ -508,7 +508,6 @@ const App: React.FC = () => {
                                     background: 'transparent',
                                     border: 'none',
                                     cursor: 'pointer',
-                                    color: 'var(--macos-primary)',
                                     display: 'flex',
                                     alignItems: 'center',
                                     padding: '4px',
@@ -560,16 +559,10 @@ const App: React.FC = () => {
                                         handleSort();
                                     }}
                                     onDragOver={(e) => e.preventDefault()}
+                                    className="macos-list-item"
                                     style={{
-                                        background: 'rgba(255,255,255,0.5)',
-                                        padding: '10px',
-                                        borderRadius: '8px',
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        gap: '8px',
-                                        border: '1px solid rgba(0,0,0,0.05)',
                                         cursor: editingId === null ? 'grab' : 'default',
-                                        transition: 'all 0.2s ease'
+                                        opacity: dragItem.current === index ? 0.5 : 1
                                     }}
                                 >
                                     {editingId === w.id ? (

@@ -4,6 +4,7 @@
     --macos-border: rgba(0, 0, 0, 0.1);
     --macos-border-dark: rgba(255, 255, 255, 0.1);
     --macos-blue: #007AFF;
+    --macos-primary: var(--macos-blue);
     --macos-blue-glow: rgba(0, 122, 255, 0.2);
     --macos-text: #1d1d1f;
     --macos-text-dark: #f5f5f7;
@@ -52,6 +53,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    color: var(--macos-text);
 }
 
 /* 极简氛围背景：移除花哨光斑，改为淡雅微光 */
@@ -100,6 +102,11 @@ body {
     justify-content: space-between;
     border-bottom: 1px solid var(--macos-border);
     flex-shrink: 0;
+    color: var(--macos-text);
+}
+
+.macos-header button {
+    color: var(--macos-primary) !important;
 }
 
 .macos-content {
@@ -154,6 +161,14 @@ body {
     background: rgba(255, 255, 255, 0.7);
     border-color: var(--macos-blue);
     box-shadow: 0 0 0 4px var(--macos-blue-glow);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .macos-input:focus,
+    .macos-select:focus {
+        background: rgba(255, 255, 255, 0.1);
+    }
 }
 
 .macos-footer {
@@ -247,6 +262,17 @@ body {
     transform: translateY(-2px);
 }
 
+@media (prefers-color-scheme: dark) {
+    .spatial-link-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: var(--macos-border-dark);
+    }
+
+    .spatial-link-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
 .spatial-close-btn {
     font-size: 13px;
     color: var(--macos-secondary);
@@ -267,5 +293,23 @@ body {
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+.macos-list-item {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    .macos-list-item {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: var(--macos-border-dark);
     }
 }
